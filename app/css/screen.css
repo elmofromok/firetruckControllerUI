@@ -1,0 +1,160 @@
+@import 'https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,900';
+html, body {
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  font-weight: 400; }
+
+h1, h2, h3 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300; }
+
+html,
+body {
+  height: 100%;
+  min-height: 100%;
+  color: #353535;
+  background-color: #fff; }
+
+.l-appFrame {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  min-height: 100%;
+  width: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  overflow: hidden; }
+  .l-appFrame > * {
+    -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+    overflow: hidden; }
+
+.l-headerFrame {
+  height: 2em;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  display: -ms-flexbox;
+  display: flex; }
+
+.l-app-BGVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%; }
+
+.l-appBody {
+  -ms-flex: 1 1 auto;
+      flex: 1 1 auto;
+  height: 100%;
+  display: -ms-flexbox;
+  display: flex; }
+  .l-appBody > * {
+    overflow: auto; }
+
+.l-appColumn {
+  box-sizing: border-box;
+  -ms-flex: 1 1 15%;
+      flex: 1 1 15%;
+  color: #353535;
+  background-color: #f7f7f7;
+  height: 100%;
+  width: 200px;
+  max-width: 100%;
+  border-right: 1px solid #717171;
+  overflow: hidden;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  transition: max-width .2s; }
+  .l-appColumn-Information {
+    -ms-flex: 2 1 20%;
+        flex: 2 1 20%;
+    max-width: 100%;
+    transition: max-width .2s; }
+  .l-appColumn-Documents {
+    -ms-flex: 2 1 20%;
+        flex: 2 1 20%;
+    max-width: 100%;
+    transition: max-width .2s; }
+  .l-appColumn-DocumentViewer {
+    -ms-flex: 5 1 50%;
+        flex: 5 1 50%;
+    max-width: 100%;
+    transition: max-width .2s; }
+  .l-appColumn--collapsed {
+    width: 30px;
+    max-width: 30px;
+    overflow: hidden;
+    position: relative;
+    transition: max-width .2s; }
+    .l-appColumn--collapsed:after {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      left: 0;
+      display: block;
+      content: "";
+      background-color: #353535;
+      opacity: .9;
+      transition: .2s; }
+
+.l-appSection {
+  min-width: 200px;
+  -ms-flex: 1 1 auto;
+      flex: 1 1 auto;
+  overflow: hidden;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  box-sizing: border-box; }
+  .l-appSection-Header {
+    padding: .5rem;
+    color: #ebebeb;
+    background-color: #494949;
+    -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+    box-sizing: border-box; }
+    .l-appSection-Header h2 {
+      font-size: .8em;
+      line-height: 1em;
+      margin: 0; }
+    .l-appSection-Header i {
+      font-size: .8em;
+      line-height: 1em;
+      position: relative;
+      z-index: 5;
+      float: left;
+      margin-right: .4em; }
+  .l-appSection-Body {
+    padding: 0;
+    overflow: auto;
+    -ms-flex: 2 1 auto;
+        flex: 2 1 auto;
+    box-sizing: border-box; }
+  .l-appSection-Tool {
+    padding: .4em;
+    text-align: center;
+    color: #353535;
+    background-color: #dfdfdf; }
+
+.l-notificationsFrame {
+  max-height: 2em;
+  width: 100vw;
+  color: #ebebeb;
+  background-color: #353535;
+  padding: 0;
+  margin: 0;
+  -ms-flex-item-align: start;
+      align-self: flex-start; }

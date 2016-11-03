@@ -1,0 +1,110 @@
+// COLOR FUNCTIONS
+// Stolen from css-tricks-> https://css-tricks.com/snippets/sass/tint-shade-functions/
+
+/// Slightly lighten a color
+/// @access public
+/// @param {Color} $color - color to tint
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+/// Slightly darken a color
+/// @access public
+/// @param {Color} $color - color to shade
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+
+// COLOR VARIABLES
+
+// Colors
+$orange: #F63;
+$blue: #069;
+$red:#AD3D3D ;
+$green: #690;
+$gold: #E7BF39;
+
+// Greyscale
+$black: #090909;
+$darkgray: #353535;
+$mediumgray: #717171;
+$lightgray: #ebebeb;
+$white :#fff;
+
+$positive-action: $green;
+$positive-action--hover: darken($positive-action,10%);
+$negative-action: $red;
+$negative-action--hover: darken($negative-action,10%);
+
+
+// COLOR IN CONTEXT
+
+//Text
+  $text : $darkgray; //Default text color, assumed on lighter background
+  $textOnDark: $lightgray; //Text color when placed on darker background, such as in a sidebar, or a header.
+
+//Links
+  $link: $blue;
+  $link--hover: darken($link,30%);
+  $linkOnDark: $lightgray;
+  $linkOnDark--hover: lighten($linkOnDark,30%);
+
+//Selected Text
+  $selectedText : $white;
+  $selectedBG : $blue;
+
+//buttons
+  $buttonText : $white;
+  $buttonBG : $blue;
+  $buttonText--hover : $white;
+  $buttonBG--hover : tint($buttonBG,20%);
+  $buttonText--disabled: darken($lightgray,10%);
+  $buttonBG--disabled: $lightgray;
+
+  $buttonText-positive : $white;
+  $buttonBG-positive : $positive-action;
+  $buttonText-positive--hover : $white;
+  $buttonBG-positive--hover : tint($buttonBG-positive,20%);
+
+  $buttonText-negative : $white;
+  $buttonBG-negative : $negative-action;
+  $buttonText-negative--hover : $white;
+  $buttonBG-negative--hover : tint($buttonBG-negative,20%);
+
+//Structure
+  $baseFG: $darkgray;
+  $baseBG : $white; //The base background color that is beneath everything else.
+  $secondaryBG: tint($lightgray,60%);
+  $secondaryText: $text;
+  $secondaryDarkBG: $mediumgray;
+  $secondaryDarkText: $lightgray;
+
+  // Page Header Bar is typically branding colors
+  $headerBarFG : $white;
+  $headerBarBG : $blue;
+
+  //App Columns
+  $appColumnFG: $text;
+  $appColumnBG: shade($white,3%);
+  $appColumnBG--collapsed: $darkgray;
+  $appColumnBorder: $mediumgray;
+
+  //App Sections
+  $appSection-HeaderFG: $textOnDark;
+  $appSection-HeaderBG: tint($darkgray,10%);
+  $appSection-ToolFG: $text;
+  $appSection-ToolBG: shade($lightgray,5%);
+
+  // NotificationsBar
+  $notificationsBarFG: $textOnDark;
+  $notificationsBarBG: $darkgray;
+
+
+//STATES
+  $activeText: $lightgray;
+  $activeBG: $blue;

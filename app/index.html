@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Firetruck Controller UI</title>
+
+
+  <!-- Include the loanvault styles -->
+  <link rel="stylesheet" href="css/screen.css" />
+
+</head>
+<body>
+
+<div class="l-appFrame">
+
+  <div class="l-headerFrame headerBar-Container">
+
+    <div class="l-column headerBar-Column headerBar-Column--left">
+      <h1 class="headerBar-AppName">Freddie Controller</h1><!-- end of .headerBar-AppName -->
+    </div>
+    <div class="l-column headerBar-Column headerBar-Column--right">
+    </div>
+
+  </div><!-- end of .l-headerFrame -->
+
+  <!-- For now I am using a canned video file, this will need to be replaced with incoming video from the cameras -->
+  <video autoplay="" class="l-app-BGVideo" data-prevent-cleanup="keep" loop="" poster="/assets/ Distill-Header-Video-Poster-23508d3dc51c406db19d858404be9400.png" preload="">
+  <source src="http://www.wedistill.io/videos/Distill-Header-Video.mp4" type="video/mp4">
+  <source src="http://www.wedistill.io/videos/Distill-Header-Video.webm" type="video/webm">
+  </video>
+
+  <div class="l-appBody">
+
+
+
+<script>
+  var listener = new window.keypress.Listener();
+  listener.simple_combo("ctrl 1", function() {
+   var col = document.querySelector('.l-appColumn-Information');
+   col.classList.toggle('l-appColumn--collapsed');
+  });
+  listener.simple_combo("ctrl 2", function() {
+   var col = document.querySelector('.l-appColumn-Documents');
+   col.classList.toggle('l-appColumn--collapsed');
+  });
+  listener.simple_combo("ctrl 3", function() {
+   var col = document.querySelector('.l-appColumn-DocumentViewer');
+   col.classList.toggle('l-appColumn--collapsed');
+  });
+  listener.simple_combo("ctrl 4", function() {
+   var col = document.querySelector('.l-appColumn-Supplemental');
+   col.classList.toggle('l-appColumn--collapsed');
+  });
+</script>
+</body>
+</html>

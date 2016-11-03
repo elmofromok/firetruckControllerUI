@@ -1,0 +1,165 @@
+// LAYOUT STYLES
+// These styles will be used to build out the app frame and layout for the site
+
+// Colors found below are defined in the theme/_colors.scss file
+
+//  This file creates the layout namespace
+//  All layout styles will start with l-
+//  The & symbol below will join that classname with the l- to form a complete classname.
+//  For example: l-row or l-column
+.l-{
+
+  // MAIN APPLICATION LEVEL LAYOUT STUFF
+  &appFrame{
+    // Set up the out app container to fill the screen and prevent overflow
+    border:0;
+    padding:0;
+    margin:0;
+    height: 100%;
+    min-height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction:column;
+    overflow: hidden;
+    // Set all children div's to not flex - may be set to stretch below
+    > * {
+      flex: 0 0 auto;
+      overflow: hidden;
+    }
+  }
+
+  // HEADER LAYOUT STYLES
+  &headerFrame{
+    height: 2em;
+    width: 100vw;
+    padding:0;
+    margin:0;
+    align-self:flex-start; //place it at the top of the flex container
+    display: flex;
+  }
+
+  // MAIN APP AREA LAYOUT STYLES
+  &app{
+    &-BGVideo{
+      position: fixed;
+      top:0;
+      left:0;
+      right:0;
+      bottom:0;
+      width:100%;
+    }
+    &Body{
+      // Set all children div's to scroll if needed
+      flex:1 1 auto; //allow it to flex and fill the remaining parts of the screen
+      height: 100%;
+      > * {
+      overflow: auto;
+      }
+      display: flex;
+    }
+    &Column{
+      box-sizing: border-box;
+      flex: 1 1 15%;
+      color: $appColumnFG;
+      background-color: $appColumnBG;
+      height: 100%;
+      width:200px;
+      max-width:100%;
+      border-right: 1px solid $appColumnBorder;
+      overflow: hidden;
+      display: flex;
+      flex-direction:column;
+      transition: max-width .2s;
+      &-Information{
+        flex:2 1 20%;
+        max-width:100%;
+        transition: max-width .2s;
+      }
+      &-Documents{
+        flex:2 1 20%;
+        max-width:100%;
+        transition: max-width .2s;
+      }
+      &-DocumentViewer{
+        flex:5 1 50%;
+        max-width:100%;
+        transition: max-width .2s;
+      }
+
+      &--collapsed{
+        width:30px;
+        max-width: 30px;
+        overflow: hidden;
+        position: relative;
+        transition: max-width .2s;
+        &:after{
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          z-index: 2;
+          top: 0;
+          left: 0;
+          display: block;
+          content: "";
+          background-color: $appColumnBG--collapsed;
+          opacity: .9;
+          transition:.2s;
+        }
+      }
+    }
+    &Section{
+      // background-color: #F4F4F4;
+      min-width: 200px;
+      flex:1 1 auto;
+      overflow: hidden;
+      display: flex;
+      flex-direction:column;
+      box-sizing: border-box;
+      &-Header{
+        padding:.5rem;
+        color: $appSection-HeaderFG;
+        background-color: $appSection-HeaderBG;
+        flex:0 0 auto;
+        box-sizing: border-box;
+        h2{
+          font-size: .8em;
+          line-height: 1em;
+          margin:0;
+        }
+
+        // Icon Styles
+        i{
+          font-size: .8em;
+          line-height: 1em;
+          position: relative;
+          z-index: 5;
+          float: left;
+          margin-right: .4em;
+        }
+      }
+      &-Body{
+        padding:0;
+        overflow: auto;
+        flex:2 1 auto;
+        box-sizing: border-box;
+      }
+      &-Tool{
+        padding:.4em;
+        text-align: center;
+        color: $appSection-ToolFG;
+        background-color: $appSection-ToolBG;
+      }
+    }
+  }
+
+  // NOTIFICATIONS ROW LAYOUT STYLES
+  &notificationsFrame{
+    max-height: 2em;
+    width: 100vw;
+    color:$notificationsBarFG;
+    background-color:$notificationsBarBG;
+    padding:0;
+    margin:0;
+    align-self:flex-start; //place it at the bottom of the flex container
+  }
+}
