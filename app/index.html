@@ -2,10 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Firetruck Controller UI</title>
+  <title>FiretruckControllerUI</title>
 
-
-  <!-- Include the loanvault styles -->
+  <!-- get the fonts -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+  
+  <!-- Include the styles -->
   <link rel="stylesheet" href="css/screen.css" />
 
 </head>
@@ -13,15 +16,102 @@
 
 <div class="l-appFrame">
 
-  <div class="l-headerFrame headerBar-Container">
 
-    <div class="l-column headerBar-Column headerBar-Column--left">
-      <h1 class="headerBar-AppName">Freddie Controller</h1><!-- end of .headerBar-AppName -->
-    </div>
-    <div class="l-column headerBar-Column headerBar-Column--right">
-    </div>
+  <div class="l-toolsContainer">
+TOOLS
+  </div><!-- end of .l-toolsContainer -->
 
-  </div><!-- end of .l-headerFrame -->
+
+  <div class="l-controlsContainer"> 
+CONTROLS
+  </div><!-- end of .l-controlsContainer -->
+
+
+  <div class="l-togglesContainer">
+
+    <div class="c-buttons-TogglebuttonOuter">
+      <div class="c-buttons-IconContainer">
+        <i class="c-buttons-Icon material-icons">face</i><!-- end of .c-buttons-icon -->
+      </div><!-- end of .c-buttons-iconContainer -->
+      <div class="c-buttons-TogglebuttonLabel">MACRO 1</div><!-- end of .c-buttons-TogglebuttonLabel -->
+    </div><!-- end of .c-buttons-togglebuttonOuter-->
+
+
+    <div class="c-buttons-TogglebuttonOuter">
+      <div class="c-buttons-IconContainer">
+        <i class="c-buttons-Icon material-icons">face</i><!-- end of .c-buttons-icon -->
+      </div><!-- end of .c-buttons-iconContainer -->
+      <div class="c-buttons-TogglebuttonLabel">MACRO 2</div><!-- end of .c-buttons-TogglebuttonLabel -->
+    </div><!-- end of .c-buttons-togglebuttonOuter-->
+
+
+    <div class="c-buttons-TogglebuttonOuter">
+      <div class="c-buttons-IconContainer">
+        <i class="c-buttons-Icon material-icons">face</i><!-- end of .c-buttons-icon -->
+      </div><!-- end of .c-buttons-iconContainer -->
+      <div class="c-buttons-TogglebuttonLabel">MACRO 3</div><!-- end of .c-buttons-TogglebuttonLabel -->
+    </div><!-- end of .c-buttons-togglebuttonOuter-->
+
+
+    <div class="c-buttons-TogglebuttonOuter">
+      <div class="c-buttons-IconContainer">
+        <i class="c-buttons-Icon material-icons">face</i><!-- end of .c-buttons-icon -->
+      </div><!-- end of .c-buttons-iconContainer -->
+      <div class="c-buttons-TogglebuttonLabel">MACRO 4</div><!-- end of .c-buttons-TogglebuttonLabel -->
+    </div><!-- end of .c-buttons-togglebuttonOuter-->
+
+
+    <div class="c-buttons-TogglebuttonOuter">
+      <div class="c-buttons-IconContainer">
+        <i class="c-buttons-Icon material-icons">face</i><!-- end of .c-buttons-icon -->
+      </div><!-- end of .c-buttons-iconContainer -->
+      <div class="c-buttons-TogglebuttonLabel">MACRO 5</div><!-- end of .c-buttons-TogglebuttonLabel -->
+    </div><!-- end of .c-buttons-togglebuttonOuter-->
+
+
+    <div class="c-buttons-TogglebuttonOuter">
+      <div class="c-buttons-IconContainer">
+        <i class="c-buttons-Icon material-icons">face</i><!-- end of .c-buttons-icon -->
+      </div><!-- end of .c-buttons-iconContainer -->
+      <div class="c-buttons-TogglebuttonLabel">MACRO 6</div><!-- end of .c-buttons-TogglebuttonLabel -->
+    </div><!-- end of .c-buttons-togglebuttonOuter-->
+
+
+    <div class="c-buttons-TogglebuttonOuter">
+      <div class="c-buttons-IconContainer">
+        <i class="c-buttons-Icon material-icons">directions_car</i><!-- end of .c-buttons-icon -->
+      </div><!-- end of .c-buttons-iconContainer -->
+      <div class="c-buttons-TogglebuttonLabel">HEADLIGHTS</div><!-- end of .c-buttons-TogglebuttonLabel -->
+    </div><!-- end of .c-buttons-togglebuttonOuter-->
+
+
+    <div class="c-buttons-TogglebuttonOuter">
+      <div class="c-buttons-IconContainer">
+        <i class="c-buttons-Icon material-icons">local_car_wash</i><!-- end of .c-buttons-icon -->
+      </div><!-- end of .c-buttons-iconContainer -->
+      <div class="c-buttons-TogglebuttonLabel">TOPLIGHTS</div><!-- end of .c-buttons-TogglebuttonLabel -->
+    </div><!-- end of .c-buttons-togglebuttonOuter-->
+
+
+    <div class="c-buttons-TogglebuttonOuter">
+      <div class="c-buttons-IconContainer">
+        <i class="c-buttons-Icon material-icons">remove_red_eye</i><!-- end of .c-buttons-icon -->
+      </div><!-- end of .c-buttons-iconContainer -->
+      <div class="c-buttons-TogglebuttonLabel">EYELIGHTS</div><!-- end of .c-buttons-TogglebuttonLabel -->
+    </div><!-- end of .c-buttons-togglebuttonOuter-->
+
+
+    <div class="c-buttons-TogglebuttonOuter">
+      <div class="c-buttons-IconContainer">
+        <i class="c-buttons-Icon material-icons">notifications_active</i><!-- end of .c-buttons-icon -->
+      </div><!-- end of .c-buttons-iconContainer -->
+      <div class="c-buttons-TogglebuttonLabel">SIRENS</div><!-- end of .c-buttons-TogglebuttonLabel -->
+    </div><!-- end of .c-buttons-togglebuttonOuter-->
+
+
+  </div><!-- end of .l-togglesContainer -->
+
+
 
   <!-- For now I am using a canned video file, this will need to be replaced with incoming video from the cameras -->
   <video autoplay="" class="l-app-BGVideo" data-prevent-cleanup="keep" loop="" poster="/assets/ Distill-Header-Video-Poster-23508d3dc51c406db19d858404be9400.png" preload="">
@@ -29,28 +119,8 @@
   <source src="http://www.wedistill.io/videos/Distill-Header-Video.webm" type="video/webm">
   </video>
 
-  <div class="l-appBody">
 
 
-
-<script>
-  var listener = new window.keypress.Listener();
-  listener.simple_combo("ctrl 1", function() {
-   var col = document.querySelector('.l-appColumn-Information');
-   col.classList.toggle('l-appColumn--collapsed');
-  });
-  listener.simple_combo("ctrl 2", function() {
-   var col = document.querySelector('.l-appColumn-Documents');
-   col.classList.toggle('l-appColumn--collapsed');
-  });
-  listener.simple_combo("ctrl 3", function() {
-   var col = document.querySelector('.l-appColumn-DocumentViewer');
-   col.classList.toggle('l-appColumn--collapsed');
-  });
-  listener.simple_combo("ctrl 4", function() {
-   var col = document.querySelector('.l-appColumn-Supplemental');
-   col.classList.toggle('l-appColumn--collapsed');
-  });
-</script>
+  </div><!-- l-appFrame -->
 </body>
 </html>

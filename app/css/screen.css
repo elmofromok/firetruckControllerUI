@@ -12,8 +12,9 @@ html,
 body {
   height: 100%;
   min-height: 100%;
-  color: #353535;
-  background-color: #fff; }
+  margin: 0;
+  padding: 0;
+  color: #353535; }
 
 .l-appFrame {
   border: 0;
@@ -22,25 +23,40 @@ body {
   height: 100%;
   min-height: 100%;
   width: 100%;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-direction: column;
-      flex-direction: column;
+  flex-direction: column;
   overflow: hidden; }
   .l-appFrame > * {
-    -ms-flex: 0 0 auto;
-        flex: 0 0 auto;
+    flex: 0 1 auto;
     overflow: hidden; }
 
-.l-headerFrame {
+.l-toolsContainer, .l-controlsContainer, .l-togglesContainer {
   height: 2em;
   width: 100vw;
   padding: 0;
   margin: 0;
-  -ms-flex-item-align: start;
-      align-self: flex-start;
-  display: -ms-flexbox;
-  display: flex; }
+  background: transparent;
+  z-index: 1;
+  flex: 1; }
+
+.l-toolsContainer {
+  height: 100px;
+  max-height: 100px;
+  align-self: flex-start;
+  display: flex;
+  z-index: 1; }
+
+.l-controlsContainer {
+  align-self: flex-start;
+  display: flex;
+  z-index: 1; }
+
+.l-togglesContainer {
+  align-self: flex-end;
+  display: flex;
+  flex: 0 1 20vh;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.1); }
 
 .l-app-BGVideo {
   position: fixed;
@@ -48,113 +64,35 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  width: 100%; }
+  width: 100%;
+  z-index: -1; }
 
-.l-appBody {
-  -ms-flex: 1 1 auto;
-      flex: 1 1 auto;
-  height: 100%;
-  display: -ms-flexbox;
+.c-buttons-TogglebuttonOuter {
+  padding: .5em 0;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center; }
+
+.c-buttons-TogglebuttonLabel {
+  font-size: .9em;
+  flex: 0 1 1em;
+  color: white;
+  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.8); }
+
+.c-buttons-IconContainer {
+  width: 6vw;
+  height: 6vw;
+  border-radius: 50%;
+  background-color: white;
+  border: 1px solid black;
+  align-items: center;
+  justify-content: space-around;
   display: flex; }
-  .l-appBody > * {
-    overflow: auto; }
 
-.l-appColumn {
-  box-sizing: border-box;
-  -ms-flex: 1 1 15%;
-      flex: 1 1 15%;
-  color: #353535;
-  background-color: #f7f7f7;
-  height: 100%;
-  width: 200px;
-  max-width: 100%;
-  border-right: 1px solid #717171;
-  overflow: hidden;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: column;
-      flex-direction: column;
-  transition: max-width .2s; }
-  .l-appColumn-Information {
-    -ms-flex: 2 1 20%;
-        flex: 2 1 20%;
-    max-width: 100%;
-    transition: max-width .2s; }
-  .l-appColumn-Documents {
-    -ms-flex: 2 1 20%;
-        flex: 2 1 20%;
-    max-width: 100%;
-    transition: max-width .2s; }
-  .l-appColumn-DocumentViewer {
-    -ms-flex: 5 1 50%;
-        flex: 5 1 50%;
-    max-width: 100%;
-    transition: max-width .2s; }
-  .l-appColumn--collapsed {
-    width: 30px;
-    max-width: 30px;
-    overflow: hidden;
-    position: relative;
-    transition: max-width .2s; }
-    .l-appColumn--collapsed:after {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      z-index: 2;
-      top: 0;
-      left: 0;
-      display: block;
-      content: "";
-      background-color: #353535;
-      opacity: .9;
-      transition: .2s; }
+.c-buttons-Icon {
+  font-size: 48px; }
 
-.l-appSection {
-  min-width: 200px;
-  -ms-flex: 1 1 auto;
-      flex: 1 1 auto;
-  overflow: hidden;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: column;
-      flex-direction: column;
-  box-sizing: border-box; }
-  .l-appSection-Header {
-    padding: .5rem;
-    color: #ebebeb;
-    background-color: #494949;
-    -ms-flex: 0 0 auto;
-        flex: 0 0 auto;
-    box-sizing: border-box; }
-    .l-appSection-Header h2 {
-      font-size: .8em;
-      line-height: 1em;
-      margin: 0; }
-    .l-appSection-Header i {
-      font-size: .8em;
-      line-height: 1em;
-      position: relative;
-      z-index: 5;
-      float: left;
-      margin-right: .4em; }
-  .l-appSection-Body {
-    padding: 0;
-    overflow: auto;
-    -ms-flex: 2 1 auto;
-        flex: 2 1 auto;
-    box-sizing: border-box; }
-  .l-appSection-Tool {
-    padding: .4em;
-    text-align: center;
-    color: #353535;
-    background-color: #dfdfdf; }
-
-.l-notificationsFrame {
-  max-height: 2em;
-  width: 100vw;
-  color: #ebebeb;
-  background-color: #353535;
-  padding: 0;
-  margin: 0;
-  -ms-flex-item-align: start;
-      align-self: flex-start; }
+/*# sourceMappingURL=screen.css.map */
