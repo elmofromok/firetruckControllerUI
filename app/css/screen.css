@@ -67,7 +67,7 @@ body {
   width: 100%;
   z-index: -1; }
 
-.c-buttons-TogglebuttonOuter {
+.c-buttons-ButtonOuter {
   padding: .5em 0;
   border: 2px solid rgba(255, 255, 255, 0.2);
   background-color: rgba(0, 0, 0, 0.4);
@@ -76,7 +76,7 @@ body {
   flex: 1;
   align-items: center; }
 
-.c-buttons-TogglebuttonLabel {
+.c-buttons-ButtonLabel {
   font-size: .9em;
   flex: 0 1 1em;
   color: white;

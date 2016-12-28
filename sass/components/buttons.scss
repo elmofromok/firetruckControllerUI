@@ -2,21 +2,32 @@
 // These styles  will define the buttons used in the app
 
 .c-buttons{
-
-  &-TogglebuttonOuter{
-    padding:.5em 0;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    background-color: rgba(0, 0, 0, 0.4);
-    display: flex;
-    flex-direction:column;
-    flex: 1;
-    align-items:center;
+  &-Button{
+    &Outer{
+      padding:.5em 0;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      background-color: rgba(0, 0, 0, 0.4);
+      display: flex;
+      flex-direction:column;
+      flex: 1;
+      align-items:center;
+    }
+    &Label{
+      font-size:.9em;
+      flex:0 1 1em;
+      color: white;
+      text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.8);
+    }
   }
-  &-TogglebuttonLabel{
-    font-size:.9em;
-    flex:0 1 1em;
-    color: white;
-    text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.8);
+  // Toggle Buttons
+  &-Togglebutton{
+    &Outer{}
+    &Label{}
+  }
+
+  &-ToolButton{
+    &Outer{}
+    &Label{}
   }
 
   // Icons for the buttons
